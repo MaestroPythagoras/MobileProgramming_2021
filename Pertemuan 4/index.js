@@ -1,5 +1,6 @@
 //Array
 
+// Contoh
 // let number = [1,2,3,4,5];
 // let maes = ["Maestro", "[Pythagoras]", 25, true];
 
