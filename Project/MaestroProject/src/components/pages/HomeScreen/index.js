@@ -12,22 +12,23 @@ const HomeScreen = () => {
     //   .then(res => res.json())
     //   .then(json => setUsers(json.data));
     //Axios
-    Axios.get('https://reqres.in/api/users').then(res =>
+    Axios.get('https://jsonplaceholder.typicode.com/users').then(res =>
       setUsers(res.data.data),
     );
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Home Screen</Text>
+      <Text style={styles.title}>Users List</Text>
 
       <ScrollView showsVerticalScrollIndicator={false}>
         {users.map(item => (
           <Card
             key={item.id}
             fullName={`${item.first_name} ${item.last_name}`}
+            userName={item.userName}
             email={item.email}
-            imageUrl={item.avatar}
+            phone={item.phone}
           />
         ))}
       </ScrollView>

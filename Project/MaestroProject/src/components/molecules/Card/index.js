@@ -1,12 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 
-const Card = ({fullName, email, imageUrl}) => {
+const Card = ({fullName, userName, email, phone}) => {
   return (
     <View style={styles.card}>
       <Text style={styles.name}>{fullName}</Text>
+      <Text style={styles.userName}>{userName}</Text>
       <Text style={styles.email}>{email}</Text>
-      <Image style={styles.image} source={{uri: `${imageUrl}`}} />
+      <Text style={styles.phone}>{phone}</Text>
     </View>
   );
 };
@@ -22,14 +23,19 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
   },
+  userName: {
+    fontSize: 16,
+    color: 'grey',
+    marginTop: 10,
+  },
   email: {
     fontSize: 16,
     color: 'grey',
     marginTop: 10,
   },
-  image: {
-    height: 150,
-    width: 150,
+  phone: {
+    fontSize: 16,
+    color: 'grey',
     marginTop: 10,
   },
 });

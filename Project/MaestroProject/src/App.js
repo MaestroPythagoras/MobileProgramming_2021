@@ -3,7 +3,7 @@ import HomeScreen from './components/pages/HomeScreen';
 import Login from './components/pages/Login'
 
 const App = () =>{
-    return <Login />;
+    return <HomeScreen />;
 };
 
 export default App;
