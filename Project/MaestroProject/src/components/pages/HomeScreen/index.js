@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import Card from '../../molecules/Card';
 import Axios from 'axios';
 
@@ -11,10 +11,11 @@ const HomeScreen = () => {
     // fetch('https://reqres.in/api/users')
     //   .then(res => res.json())
     //   .then(json => setUsers(json.data));
+    
     //Axios
-    Axios.get('https://jsonplaceholder.typicode.com/users').then(res =>
-      setUsers(res.data.data),
-    );
+    Axios
+    .get('https://jsonplaceholder.typicode.com/users')
+    .then((res) => setUsers(res.data));
   }, []);
 
   return (
@@ -22,15 +23,15 @@ const HomeScreen = () => {
       <Text style={styles.title}>Users List</Text>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        {users.map(item => (
+        {users.map(item => 
           <Card
-            key={item.id}
-            fullName={`${item.first_name} ${item.last_name}`}
-            userName={item.userName}
-            email={item.email}
-            phone={item.phone}
+          name={item.name}
+          username={item.username}
+          email={item.email}
+          address={`${item.address.street}, ${item.address.suite}, ${item.address.city}, ${item.address.zipcode}`}
+          phone={item.phone}
           />
-        ))}
+        )}
       </ScrollView>
     </View>
   );
