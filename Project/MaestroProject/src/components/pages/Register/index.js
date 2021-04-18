@@ -9,13 +9,13 @@ const App = () =>{
     <View style={styles.container}>
     <Text style={styles.title}>Registration</Text>
     <Gap height={40} />
-    <TextInput label="* First Name" placeholder="Masukan (First Name) Anda"/>
+    <TextInput label="* First Name" placeholder="Masukan (Nama Pertama) Anda"/>
     <Gap height={24} />
-    <TextInput label="* Last Name" placeholder="Masukan (Last Name) Anda"/>
+    <TextInput label="* Last Name" placeholder="Masukan (Nama Terakhir) Anda"/>
     <Gap height={24} />
     <TextInput label="* E-Mail" placeholder="Masukan (E-mail) Anda"/>
     <Gap height={48} />
-    <Button label="Register" />
+    <Button label="DAFTAR" />
     </View>
     );
 };

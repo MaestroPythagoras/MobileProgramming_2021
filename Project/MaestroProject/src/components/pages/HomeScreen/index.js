@@ -16,18 +16,27 @@ const HomeScreen = () => {
     //Axios
     Axios
       .get('http://10.0.2.2:3004/users')
-      .then((res) => setUsers(res.data));
+      .then(res => setUsers(res.data),
+      );
   }, [users]);
 
   const handleSubmit = () => {
-    const data = {
+    axios.post('http://10.0.2.2:3004/users', {
       email: 'angelin.veronica@mail.com',
       first_name: 'Angelin',
       last_name: 'Veronica',
       avatar: 'https://reqres.in/img/faces/7-image.jpg'
-    };
-    Axios
-      .post('http://10.0.2.2:3004/users', data);
+    })
+    .then(function (response) {
+      console.log(response);
+    })  
+    // const data = {
+      // email: 'angelin.veronica@mail.com',
+      // first_name: 'Angelin',
+      // last_name: 'Veronica',
+      // avatar: 'https://reqres.in/img/faces/7-image.jpg',
+    // };
+    // Axios.post('http://10.0.2.2:3004/users', data)
   };
 
   return (
@@ -36,7 +45,7 @@ const HomeScreen = () => {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <Button label="Update" onSubmit={handleSubmit} />
-        {users.map(item => 
+        {users.map(item => (
           <Card
           key={item.id}
           fullName={`${item.first_name} ${item.last_name}`}
@@ -47,7 +56,7 @@ const HomeScreen = () => {
           // address={`${item.address.street}, ${item.address.suite}, ${item.address.city}, ${item.address.zipcode}`}
           // phone={item.phone}
           />
-        )}
+        ))}
       </ScrollView>
     </View>
   );
