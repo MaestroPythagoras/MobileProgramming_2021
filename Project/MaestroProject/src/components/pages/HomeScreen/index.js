@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import Card from '../../molecules/Card';
+import Button from '../../atoms/Button';
 import Axios from 'axios';
 
 const HomeScreen = () => {
@@ -14,22 +15,36 @@ const HomeScreen = () => {
     
     //Axios
     Axios
-    .get('https://jsonplaceholder.typicode.com/users')
+    .get('http://localhost:3004/users')
     .then((res) => setUsers(res.data));
-  }, []);
+  }, [users]);
+
+  const handleSubmit = () => {
+    const data = {
+      email: 'angelin.veronica@gmail.com',
+      first_name: 'Angelin',
+      last_name: 'Veronica',
+      avatar: 'https://reqres.in/img/faces/7-image.jpg'
+    };
+    Axios.post('http://localhost:3004/users', data);
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Users List</Text>
+      <Text style={styles.title}>Home Screen</Text>
 
       <ScrollView showsVerticalScrollIndicator={false}>
+        <Button label="Tambah" onSubmit={handleSubmit} />
         {users.map(item => 
           <Card
-          name={item.name}
-          username={item.username}
+          key={item.id}
+          fullName={`${item.first_name} ${item.last_name}`}
+          // name={item.name}
+          // username={item.username}
           email={item.email}
-          address={`${item.address.street}, ${item.address.suite}, ${item.address.city}, ${item.address.zipcode}`}
-          phone={item.phone}
+          imageUrl={item.avatar}
+          // address={`${item.address.street}, ${item.address.suite}, ${item.address.city}, ${item.address.zipcode}`}
+          // phone={item.phone}
           />
         )}
       </ScrollView>

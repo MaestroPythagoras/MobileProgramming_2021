@@ -1,14 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 
-const Card = ({name, username, email, address, phone}) => {
+const Card = ({fullName, username, email, address, phone, imageUrl}) => {
   return (
     <View style={styles.card}>
-      <Text style={styles.name}>Name: {name}</Text>
-      <Text style={styles.username}>Username: {username}</Text>
-      <Text style={styles.email}>Email: {email}</Text>
-      <Text style={styles.address}>Address: {address}</Text>
-      <Text style={styles.phone}>Phone: {phone}</Text>
+      <Image style={styles.image} source={{uri: `${imageUrl}`}} />
+      <View>
+      <Text style={styles.name}>- Name: {fullName}</Text>
+      <Text style={styles.email}>- Email: {email}</Text>
+      </View>
+      {/* <Text style={styles.address}>Address: {address}</Text>
+      <Text style={styles.phone}>Phone: {phone}</Text> */}
     </View>
   );
 };
@@ -17,13 +19,17 @@ export default Card;
 
 const styles = StyleSheet.create({
   card: {
-    marginTop: 20,
-    alignItems: 'flex-start',
-    borderWidth: 2,
-    padding: 10,
-    marginHorizontal: 25,
-    marginVertical:25,
-    
+    flexDirection: 'row',
+    marginTop: 10,
+    alignItems: 'center',
+    borderWidth: 3,
+    padding: 15,
+    marginHorizontal: 10,
+    marginVertical:15,
+  },
+  cardWrapper: {
+    marginLeft: 10,
+    justifyContent: 'center'
   },
   name: {
     fontSize: 14,
@@ -48,5 +54,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'grey',
     marginTop: 10,
+  },
+  image: {
+    height: 100,
+    width: 100,
+    marginTop: 5,
+    borderRadius: 100,
   },
 });
