@@ -21,22 +21,25 @@ const HomeScreen = () => {
   }, [users]);
 
   const handleSubmit = () => {
-    axios.post('http://10.0.2.2:3004/users', {
+    // #1
+    // axios.post('http://10.0.2.2:3004/users', {
+    //   email: 'angelin.veronica@mail.com',
+    //   first_name: 'Angelin',
+    //   last_name: 'Veronica',
+    //   avatar: 'https://reqres.in/img/faces/7-image.jpg'
+    // })
+    // .then(function (response) {
+    //   console.log(response);
+    // })  
+
+    // #2
+    const data = {
       email: 'angelin.veronica@mail.com',
       first_name: 'Angelin',
       last_name: 'Veronica',
-      avatar: 'https://reqres.in/img/faces/7-image.jpg'
-    })
-    .then(function (response) {
-      console.log(response);
-    })  
-    // const data = {
-      // email: 'angelin.veronica@mail.com',
-      // first_name: 'Angelin',
-      // last_name: 'Veronica',
-      // avatar: 'https://reqres.in/img/faces/7-image.jpg',
-    // };
-    // Axios.post('http://10.0.2.2:3004/users', data)
+      avatar: 'https://reqres.in/img/faces/7-image.jpg',
+    };
+    Axios.post('http://10.0.2.2:3004/users', data)
   };
 
   return (
