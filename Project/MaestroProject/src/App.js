@@ -4,7 +4,7 @@ import Login from './components/pages/Login';
 import Register from './components/pages/Register'
 
 const App = () =>{
-    return <Register />;
+    return <HomeScreen />;
 };
 
 export default App;

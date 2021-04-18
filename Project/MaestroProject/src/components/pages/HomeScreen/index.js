@@ -15,18 +15,19 @@ const HomeScreen = () => {
     
     //Axios
     Axios
-    .get('http://localhost:3004/users')
-    .then((res) => setUsers(res.data));
+      .get('http://localhost:3004/users')
+      .then((res) => setUsers(res.data));
   }, [users]);
 
   const handleSubmit = () => {
     const data = {
-      email: 'angelin.veronica@gmail.com',
+      email: 'angelin.veronica@email.com',
       first_name: 'Angelin',
       last_name: 'Veronica',
       avatar: 'https://reqres.in/img/faces/7-image.jpg'
     };
-    Axios.post('http://localhost:3004/users', data);
+    Axios
+      .post('http://localhost:3004/users', data);
   };
 
   return (
@@ -34,7 +35,7 @@ const HomeScreen = () => {
       <Text style={styles.title}>Home Screen</Text>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Button label="Tambah" onSubmit={handleSubmit} />
+        <Button label="Update" onSubmit={handleSubmit} />
         {users.map(item => 
           <Card
           key={item.id}
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 36,
+    marginBottom: 20,
     fontWeight: '700',
   },
   card: {
