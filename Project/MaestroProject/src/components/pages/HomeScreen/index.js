@@ -15,19 +15,19 @@ const HomeScreen = () => {
     
     //Axios
     Axios
-      .get('http://localhost:3004/users')
+      .get('http://10.0.2.2:3004/users')
       .then((res) => setUsers(res.data));
   }, [users]);
 
   const handleSubmit = () => {
     const data = {
-      email: 'angelin.veronica@email.com',
+      email: 'angelin.veronica@mail.com',
       first_name: 'Angelin',
       last_name: 'Veronica',
       avatar: 'https://reqres.in/img/faces/7-image.jpg'
     };
     Axios
-      .post('http://localhost:3004/users', data);
+      .post('http://10.0.2.2:3004/users', data);
   };
 
   return (
