@@ -29,10 +29,9 @@ const Register = () => {
     };
   
     return (
+    <ScrollView showsVerticalScrollIndicator={false}> 
       <View style={styles.container}>
         <Text style={styles.title}>Register</Text>
-  
-        <ScrollView showsVerticalScrollIndicator={false}> 
         <View>
         <Gap height={40} />
         <TextInput
@@ -56,7 +55,7 @@ const Register = () => {
           onChangeText={e => setEmail(e)}
         />
         <Gap height={48} />
-        <Button label="DAFTAR" onSubmit={handleSubmit} />
+        <Button label="S A V E" onSubmit={handleSubmit} />
         </View>
 
         <View>
@@ -68,8 +67,8 @@ const Register = () => {
             />
           ))}
           </View>
-        </ScrollView>
       </View>
+    </ScrollView>
     );
   };
   

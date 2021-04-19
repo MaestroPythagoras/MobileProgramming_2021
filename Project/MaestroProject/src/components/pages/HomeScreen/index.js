@@ -8,14 +8,8 @@ const HomeScreen = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    //Fetch
-    // fetch('https://reqres.in/api/users')
-    //   .then(res => res.json())
-    //   .then(json => setUsers(json.data));
-    
-    //Axios
     Axios
-      .get('http://10.0.2.2:3004/users')
+      .get('http://localhost:3004/users')
       .then(res => setUsers(res.data),
       );
   }, [users]);
@@ -27,7 +21,7 @@ const HomeScreen = () => {
       last_name: 'Veronica',
       avatar: 'https://reqres.in/img/faces/7-image.jpg',
     };
-    Axios.post('http://10.0.2.2:3004/users', data)
+    Axios.post('http://localhost:3004/users', data)
   };
 
   return (
