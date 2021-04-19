@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import TextInput from '../../atoms/TextInput';
 import Button from '../../atoms/Button';
 import Gap from '../../atoms/Gap';
@@ -21,9 +21,9 @@ const Register = () => {
   
     const handleSubmit = () => {
       const data = {
-        email: email,
         first_name: first_name,
         last_name: last_name,
+        email: email,
       };
       Axios.post('http://localhost:3004/users', data)
     };

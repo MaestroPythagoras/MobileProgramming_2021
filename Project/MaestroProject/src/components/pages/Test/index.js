@@ -5,9 +5,8 @@ import Button from '../../atoms/Button';
 import UserProfile from '../../molecules/UserProfile';
 import Axios from 'axios';
 
-const ScreenInputData = () => {
+const Register = () => {
   const [users, setUsers] = useState([]);
-
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -52,7 +51,6 @@ const ScreenInputData = () => {
         </ScrollView>
       </View>
 
-      {/* DISPLAY DATA */}
       <View>
       <ScrollView showsVerticalScrollIndicator={false}>
           {users.map(item => (
@@ -68,6 +66,6 @@ const ScreenInputData = () => {
   );
 };
 
-export default ScreenInputData;
+export default Register;
 
 const styles = StyleSheet.create({});
