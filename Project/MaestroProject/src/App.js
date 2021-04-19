@@ -5,7 +5,7 @@ import Register from './components/pages/Register'
 import Test from './components/pages/Test'
 
 const App = () =>{
-    return <HomeScreen />;
+    return <Register />;
 };
 
 export default App;
