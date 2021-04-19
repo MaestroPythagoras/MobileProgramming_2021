@@ -8,9 +8,9 @@ import Axios from 'axios';
 
 const Register = () => {
     const [users, setUsers] = useState([]);
-    const [first_name, setFirst_Name] = useState('');
-    const [last_name, setLast_Name] = useState('');
-    const [email, setEmail] = useState('');
+    const [firstName, set_FirstName] = useState('');
+    const [lastName, set_LastName] = useState('');
+    const [email, set_Email] = useState('');
   
     useEffect(() => {
       Axios
@@ -21,8 +21,8 @@ const Register = () => {
   
     const handleSubmit = () => {
       const data = {
-        first_name: first_name,
-        last_name: last_name,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
       };
       Axios.post('http://localhost:3004/users', data)
@@ -35,24 +35,24 @@ const Register = () => {
         <View>
         <Gap height={40} />
         <TextInput
-          value={first_name}
+          value={firstName}
           label="First Name"
           placeholder="Masukan First Name Anda"
-          onChangeText={e => setFirst_Name(e)}
+          onChangeText={e => set_FirstName(e)}
         />
         <Gap height={24} />
         <TextInput
-          value={last_name}
+          value={lastName}
           label="Last Name"
           placeholder="Masukan Last Name Anda"
-          onChangeText={e => setLast_Name(e)}
+          onChangeText={e => set_LastName(e)}
         />
         <Gap height={24} />
         <TextInput
           value={email}
           label="Email"
           placeholder="Masukan Email Name Anda"
-          onChangeText={e => setEmail(e)}
+          onChangeText={e => set_Email(e)}
         />
         <Gap height={48} />
         <Button label="S A V E" onSubmit={handleSubmit} />
