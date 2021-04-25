@@ -80,15 +80,9 @@
       "id": 15
     },
     {
-      "firstName": [
-        ""
-      ],
-      "lastName": [
-        ""
-      ],
-      "email": [
-        ""
-      ],
+      "firstName": "",
+      "lastName": "",
+      "email": "",
       "id": 16
     }
   ]

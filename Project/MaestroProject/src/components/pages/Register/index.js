@@ -62,7 +62,7 @@ const Register = () => {
           {users.map(item => (
             <Card
             key={item.id}
-            fullName={`${item.first_name} ${item.last_name}`}
+            fullName={`${item.firstName} ${item.lastName}`}
             email={item.email}
             />
           ))}
