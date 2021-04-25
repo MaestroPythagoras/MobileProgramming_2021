@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Logo} from '../../assets/index';
+import {Logo} from '../../atoms/Assets';
 
-const SpalshScreen = ({navigation}) => {
+const SplashScreen = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.replace('SignIn');
@@ -17,11 +17,11 @@ const SpalshScreen = ({navigation}) => {
   );
 };
 
-export default SpalshScreen;
+export default SplashScreen;
 
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: '#02cf8e',
+    backgroundColor: '#E8F217',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

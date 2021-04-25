@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {SplashScreen, SignIn} from '../pages';
+import {SplashScreen, SignIn} from '../components/pages';
 
 const Stack = createStackNavigator();
 
